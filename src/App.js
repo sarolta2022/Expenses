@@ -1,5 +1,5 @@
 //old react projects import React from "react";
-// instead of what we are useing at index.js
+// instead of what we are using at index.js
 //import ReactDOM from 'react-dom';
 
 import React from "react";

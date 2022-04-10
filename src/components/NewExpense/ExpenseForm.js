@@ -7,31 +7,58 @@ const ExpenseForm = () => {
   const [enteredDate, setEnteredDate] = useState("");
   // OR IN ONE LINE
 
+  /* const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+  }); */
+
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
+    //setUserInput({
+    /* enteredTitle: event.target.value,
+      enteredAmount: "",
+      enteredDate: "", */
+    // ...userInput,
+    //enteredTitle: event.target.value,
+
+    /* setUserInput((prevState) => {
+      return { ...prevState, enteredTitle: event.target.value };
+    }); */
   };
 
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
+    /* setUserInput({
+      ...userInput,
+      enteredAmount: event.target.value,
+    }); */
   };
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
+    /* setUserInput({
+      ...userInput,
+      enteredDate: event.target.value,
+    }); */
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-
-    /* const expenseData = {
+    const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
-    }; */
+    };
+    console.log(expenseData);
+    setEnteredTitle("");
+    setEnteredAmount("");
+    setEnteredDate("");
   };
 
   //console.log(expenseData);
-  setEnteredTitle("");
-  setEnteredAmount("");
+  /* setEnteredTitle("");
+  setEnteredAmount(""); */
 
   //standard behavior, that onsubmit sends a request to the server and we dont want it,
   //that is what defaultprevent
@@ -53,6 +80,7 @@ const ExpenseForm = () => {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -62,6 +90,7 @@ const ExpenseForm = () => {
             type="date"
             min="2019-01-01"
             max="2022-12-31"
+            value={enteredDate}
             onChange={dateChangeHandler}
           />
         </div>

@@ -4,7 +4,7 @@ import ExpenseDate from "./ExpenseDate";
 import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   //function clickHandler(){}
   const [title, setTitle] = useState(props.title);
   console.log("expense item is evaluated by react");
@@ -24,7 +24,7 @@ function ExpenseItem(props) {
       <button onClick={clickHandler}>Change title</button>
     </Card>
   );
-}
+};
 
 export default ExpenseItem;
 //onClick wants to have a function as a avalue
